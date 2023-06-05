@@ -18,7 +18,7 @@ pipeline{
    
                     // -- Compilando
                     echo 'Compilando aplicación'
-                    sh 'mvn clean compile'
+                    sh 'mvn'
 
                 }
             }
