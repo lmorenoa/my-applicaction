@@ -1,7 +1,7 @@
 pipeline{
 
     agent {
-        label 'principal'
+        label 'maven'
     }
 
     environment {
@@ -9,9 +9,7 @@ pipeline{
     }
 
     stages{      
-        stage('Run tests') {
-
-            stage ('Build') {
+         stage ('Build') {
                 steps {
                     echo 'Building stage!'
                     sh 'mvn'
@@ -20,5 +18,4 @@ pipeline{
  
     }
     
-}
 }
