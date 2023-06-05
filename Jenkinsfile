@@ -16,6 +16,14 @@ pipeline{
                 }
             }
  
+         stage ('Archive') {
+                steps {
+                    echo 'Archive stage!'
+                    archiveArtifacts artifacts: 'target/*.jar'
+                }
+            }
+
+
     }
     
 }
