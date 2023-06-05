@@ -12,7 +12,14 @@ pipeline{
          stage ('Build') {
                 steps {
                     echo 'Building stage!'
-                    sh 'mvn'
+
+                    sh 'rm -rf *'
+                    checkout scm
+   
+                    // -- Compilando
+                    echo 'Compilando aplicación'
+                    sh 'mvn clean compile'
+
                 }
             }
  
