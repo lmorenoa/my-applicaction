@@ -26,7 +26,7 @@ pipeline{
          stage ('Archive') {
                 steps {
                     echo 'Archive stage!'
-                    archiveArtifacts artifacts: '*.jar'
+                    archiveArtifacts artifacts: 'target/*.jar'
                 }
             }
 
