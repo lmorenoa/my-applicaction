@@ -5,7 +5,7 @@ pipeline{
     }
 
     environment {
-        EMAIL_TO = 'mariofont@icloud.com'
+        EMAIL_TO = 'lmalarza74@gmail.com'
     }
 
     stages{      
@@ -31,6 +31,19 @@ pipeline{
             }
 
 
+    }
+
+
+    post {
+        
+        unstable {
+            echo "Email to: ${EMAIL_TO} with: JOB NAME: ${env.JOB_NAME} BUILD_NUMBER: ${env.BUILD_NUMBER}"
+            cleanWs()
+        }
+        failure {
+            echo "Email to: ${EMAIL_TO} with: JOB NAME: ${env.JOB_NAME} BUILD_NUMBER: ${env.BUILD_NUMBER}"
+            cleanWs()
+        }
     }
     
 }
