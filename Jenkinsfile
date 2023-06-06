@@ -35,7 +35,9 @@ pipeline{
 
 
     post {
-        
+        always {
+            echo 'Post!!!'
+        }    
         unstable {
             echo "Email to: ${EMAIL_TO} with: JOB NAME: ${env.JOB_NAME} BUILD_NUMBER: ${env.BUILD_NUMBER}"
             cleanWs()
