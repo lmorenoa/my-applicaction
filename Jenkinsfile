@@ -38,13 +38,14 @@ pipeline{
         always {
             echo 'Post!!!'
         }    
+        success{
+            emailext subject: "Pipeline Successful", to: "lmalarza74@gmail.com"
+        }
         unstable {
-            echo "Email to: ${EMAIL_TO} with: JOB NAME: ${env.JOB_NAME} BUILD_NUMBER: ${env.BUILD_NUMBER}"
-            cleanWs()
+            emailext subject: "Pipeline unstable", to: "lmalarza74@gmail.com"
         }
         failure {
-            echo "Email to: ${EMAIL_TO} with: JOB NAME: ${env.JOB_NAME} BUILD_NUMBER: ${env.BUILD_NUMBER}"
-            cleanWs()
+            emailext subject: "Pipeline Failure", to: "lmalarza74@gmail.com"
         }
     }
     
