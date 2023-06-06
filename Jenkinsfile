@@ -11,7 +11,7 @@ pipeline{
     stages{      
          stage ('Build') {
                 steps {
-                    echo 'Building stage!'
+                    echo 'Building stage!!!'
 
                     sh 'rm -rf *'
                     checkout scm
@@ -25,7 +25,7 @@ pipeline{
  
          stage ('Archive') {
                 steps {
-                    echo 'Archive stage!'
+                    echo 'Archive stage!!!'
                     archiveArtifacts artifacts: '**/target/*.jar'
                 }
             }
