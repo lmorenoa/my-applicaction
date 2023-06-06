@@ -39,13 +39,14 @@ pipeline{
             echo 'Post!!!'
         }    
         success{
-            emailext subject: "Pipeline Successful", to: "lmalarza74@gmail.com"
-        }
-        unstable {
-            emailext subject: "Pipeline unstable", to: "lmalarza74@gmail.com"
+            emailext to: "lmalarza74@gmail.com",
+            subject: "Pipeline Successful",
+            body: "Text"
         }
         failure {
-            emailext subject: "Pipeline Failure", to: "lmalarza74@gmail.com"
+            emailext to: "lmalarza74@gmail.com",
+            subject: "Pipeline error",
+            body: "Text"
         }
     }
     
