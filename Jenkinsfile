@@ -11,7 +11,7 @@ pipeline{
     stages{      
          stage ('Build') {
                 steps {
-                    echo 'Building stage!!!'
+                    echo 'Building stage!!! '
 
                     sh 'rm -rf *'
                     checkout scm
