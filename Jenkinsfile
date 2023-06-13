@@ -16,8 +16,8 @@ pipeline{
                     // -- Compilando
                     echo 'Compilando aplicación'
                     sh 'mvn clean compile'
+                    sh 'cd target/classes'
                     sh 'ls'
-
                 }
             }
  
@@ -43,13 +43,13 @@ pipeline{
 			s3UpLoad(bucket:'my-aplis3', file: 'target/classes/application.properties')
 		    }
 
-            echo 'Email!!!'
+            echo 'Email Successful !!'
             emailext to: "lmalarza74@gmail.com",
             subject: "Pipeline Successful",
             body: "Text"
         }
         failure {
-            echo 'Error!!!'
+            echo 'Email Error !!'
             emailext to: "lmalarza74@gmail.com",
             subject: "Pipeline Error",
             body: "Text"
