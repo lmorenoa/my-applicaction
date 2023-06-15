@@ -47,13 +47,13 @@ pipeline{
             echo 'Email Successful !!'
             emailext to: "lmalarza74@gmail.com",
             subject: "Pipeline Successful",
-            body: "Text"
+            body: "nodo ${env.NODE_NAME} \n en el build ${env.BUILD_NUMBER} en la tarea ${env.JOB_NAME} "
         }
         failure {
             echo 'Email Error !!'
             emailext to: "lmalarza74@gmail.com",
             subject: "Pipeline Error",
-            body: "Text"
+            body: "nodo ${env.NODE_NAME} \n en el build ${env.BUILD_NUMBER} en la tarea ${env.JOB_NAME} "
         }
     }
     
