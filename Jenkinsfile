@@ -17,6 +17,7 @@ pipeline{
                     echo 'Compilando aplicación'
                     sh 'mvn clean compile'
                     sh 'cd target/classes'
+                    sh 'pwd'
                     sh 'ls'
                 }
             }
