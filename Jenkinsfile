@@ -40,7 +40,7 @@ pipeline{
             echo 'Successful!!!'
             echo 'AWS S3!!!'
             withAWS(region:'eu-west-2', credentials: 'aws-default'){
-			s3Upload(bucket:'my-aplis374', file: 'target/classes/*.*')
+			s3Upload(bucket:'my-aplis374', file: 'target/classes/templates')
 		    }
 
             echo 'Email Successful !!'
