@@ -18,6 +18,7 @@ pipeline{
                     sh 'mvn clean compile'
                     sh 'ls target/classes'
                     sh 'pwd'
+                    sh 'ls target/classes/es'
                 }
             }
 
