@@ -20,6 +20,13 @@ pipeline{
                     sh 'pwd'
                 }
             }
+
+        stage ('Test') {
+                steps {
+                    echo 'Archive test!!!'
+                    sh 'mvn test'
+                }
+            }
  
          stage ('Archive') {
                 steps {
